@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PublicityCompanyController!{% endblock %}
+
+{% block body %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the PDF</title>
+</head>
+<body>
+{% for value in data %}
+<h1>Facture de entreprise {{ value.nameCompany }}</h1>
+<table border=1>
+    <thead>
+    <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Pays</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Prix total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ value.nameCompany }}</td>
+        <td>{{ value.Adresse }}</td>
+        <td>{{ value.country }}</td>
+        <td>{{ value.price }}</td>
+        <td>{{ value.priceTTC }}</td>
+    </tr>
+    </tbody>
+</table>
+{% endfor %}
+</body>
+</html>
+{% endblock %}

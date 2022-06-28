@@ -1,0 +1,19 @@
+knpu_oauth2_client:
+    clients:
+      google:
+        # must be "google" - it activates that type!
+        type: google
+        # add and configure client_id and client_secret in parameters.yml
+        client_id: '%env(resolve:GOOGLE_CLIENT_ID)%'
+        client_secret: '%env(resolve:GOOGLE_CLIENT_SECRET)%'
+        # a route name you'll create
+        redirect_route: connect_google_check
+        redirect_params: { }
+      facebook:
+        type: facebook
+        client_id: '%env(OAUTH_FACEBOOK_ID)%'
+        client_secret: '%env(OAUTH_FACEBOOK_SECRET)%'
+        # the route that you're redirected to after
+        redirect_route: connect_facebook_check
+        redirect_params: { }
+        graph_api_version: v3.2

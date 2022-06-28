@@ -1,0 +1,12 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+get_one_company:
+  path:      /companies/{id}
+  defaults:  { _controller: CompanyController:getById }
+suggestions_get_one:
+  path:      /suggestions/{id}
+  defaults:  { _controller: SuggestionController:show }
+gesdinet_jwt_refresh_token:
+  path:       /token/refresh
+  controller: gesdinet.jwtrefreshtoken::refresh
